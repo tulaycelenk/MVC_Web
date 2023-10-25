@@ -12,6 +12,10 @@ import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
 
+import static com.rungroup.web.mappers.ClubMapper.mapToClub;
+import static com.rungroup.web.mappers.ClubMapper.mapToClubDto;
+
+
 @Service
 public class ClubServiceImpl implements ClubService {
 
@@ -63,27 +67,5 @@ public class ClubServiceImpl implements ClubService {
         return clubs.stream().map(club -> mapToClubDto(club)).collect(Collectors.toList());
     }
 
-    private Club mapToClub(ClubDto club){
-        Club clubDto = Club.builder()
-                .id(club.getId())
-                .title(club.getTitle())
-                .photoUrl(club.getPhotoUrl())
-                .content(club.getContent())
-                .cratedOn(club.getCratedOn())
-                .updatedOn(club.getUpdatedOn())
-                .build();
-        return clubDto;
-    }
-    //we create our mapper method
-    private ClubDto mapToClubDto(Club club){
-        ClubDto clubDto = ClubDto.builder()
-                .id(club.getId())
-                .title(club.getTitle())
-                .photoUrl(club.getPhotoUrl())
-                .content(club.getContent())
-                .cratedOn(club.getCratedOn())
-                .updatedOn(club.getUpdatedOn())
-                .build();
-        return clubDto;
-    }
+
 }

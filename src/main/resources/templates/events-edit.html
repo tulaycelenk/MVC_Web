@@ -10,7 +10,7 @@
     <!-- the fragment that we want to inject into our layout-->
     <section layout:fragment="body" class="py-5">
         <div class="container">
-            <form role="form" method="post" th:action="@{/events/{clubId}(clubId=${club.id})}" th:object="${event}">
+            <form role="form" method="post" th:action="@{/events/{eventId}/edit(eventId=${event.id})}" th:object="${event}">
                 <div class="form-group">
                     <label for="name">Name</label>
                     <input type="text" class="form-control" id="name" th:field="*{name}" placeholder="Title">

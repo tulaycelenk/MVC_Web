@@ -2,13 +2,12 @@ package com.rungroup.web.dtos;
 
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotEmpty;
-import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.hibernate.annotations.CreationTimestamp;
-import org.hibernate.annotations.UpdateTimestamp;
+
+import java.util.List;
 
 @Data
 @Builder
@@ -24,5 +23,6 @@ public class ClubDto {
     private String content;
     private String cratedOn;
     private String updatedOn;
+    private List<EventDto> events;
 
 }
